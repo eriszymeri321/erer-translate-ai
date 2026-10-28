@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ERER Translate AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <main class="shell">
+      <section class="hero-card">
+        <!-- Header i aplikacionit me emrin dhe përshkrimin kryesor. -->
+        <div class="brand-row">
+          <div class="logo-mark">ERER</div>
+          <div>
+            <p class="eyebrow">Përkthim inteligjent</p>
+            <h1>ERER Translate AI</h1>
+          </div>
+        </div>
+
+        <p class="hero-copy">
+          Shkruaj në shqip ose në çdo gjuhë tjetër dhe përktheje menjëherë me
+          një ndërfaqe të pastër, moderne dhe profesionale.
+        </p>
+
+        <!-- Paneli kryesor ku përdoruesi zgjedh gjuhët dhe shkruan tekstin. -->
+        <div class="translator-card">
+          <div class="controls-grid">
+            <label class="control">
+              <span>Gjuha burimore</span>
+              <select id="sourceLang">
+                <option value="auto">Auto-detect</option>
+                <option value="sq">Shqip</option>
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+                <option value="fr">Français</option>
+                <option value="it">Italiano</option>
+                <option value="es">Español</option>
+                <option value="tr">Türkçe</option>
+                <option value="sr">Srpski</option>
+                <option value="el">Ελληνικά</option>
+              </select>
+            </label>
+
+            <button
+              class="swap-button"
+              id="swapButton"
+              type="button"
+              aria-label="Ndërro gjuhët"
+            >
+              ⇄
+            </button>
+
+            <label class="control">
+              <span>Gjuha e synuar</span>
+              <select id="targetLang">
+                <option value="en">English</option>
+                <option value="sq">Shqip</option>
+                <option value="de">Deutsch</option>
+                <option value="fr">Français</option>
+                <option value="it">Italiano</option>
+                <option value="es">Español</option>
+                <option value="tr">Türkçe</option>
+                <option value="sr">Srpski</option>
+                <option value="el">Ελληνικά</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="text-panels">
+            <label class="panel">
+              <div class="panel-top">
+                <span>Teksti origjinal</span>
+                <button id="clearButton" class="ghost-button" type="button">
+                  Pastro
+                </button>
+              </div>
+              <textarea
+                id="inputText"
+                placeholder="Shkruaj këtu tekstin që dëshiron të përkthesh..."
+              ></textarea>
+              <div class="panel-footer">
+                <span id="inputMeta">0 karaktere</span>
+              </div>
+            </label>
+
+            <label class="panel output-panel">
+              <div class="panel-top">
+                <span>Përkthimi</span>
+                <button id="copyButton" class="ghost-button" type="button">
+                  Kopjo
+                </button>
+              </div>
+              <div id="outputText" class="output-box">
+                Përkthimi do të shfaqet këtu.
+              </div>
+              <div class="panel-footer">
+                <span id="statusText">Gati për përkthim</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="action-row">
+            <button id="translateButton" class="primary-button" type="button">
+              Përkthe tani
+            </button>
+            <p class="hint">
+              Sugjerim: mund të përkthesh edhe nga shqipja në gjuhë të tjera dhe
+              anasjelltas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Krediti i projektit në fund të faqes. -->
+        <footer class="project-credit">
+          Punuar nga Eris Zymeri, Erion Mehmeti
+        </footer>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

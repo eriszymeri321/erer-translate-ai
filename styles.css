@@ -1,0 +1,354 @@
+:root {
+  --bg: #f5f8fc;
+  --bg-soft: rgba(255, 255, 255, 0.9);
+  --card: rgba(255, 255, 255, 0.96);
+  --card-border: rgba(148, 163, 184, 0.2);
+  --text: #102033;
+  --muted: #607089;
+  --accent: #4f8cff;
+  --accent-2: #62c7b4;
+  --accent-3: #8aa4ff;
+  --success: #1f9d6b;
+  --shadow: 0 24px 60px rgba(31, 41, 55, 0.12);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --font:
+    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(79, 140, 255, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(98, 199, 180, 0.14),
+      transparent 28%
+    ),
+    linear-gradient(180deg, #ffffff 0%, #f5f8fc 45%, #eef4fb 100%);
+  overflow-x: hidden;
+}
+
+.ambient {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(24px);
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.ambient-one {
+  top: 8%;
+  left: 7%;
+  width: 220px;
+  height: 220px;
+  background: rgba(98, 199, 180, 0.2);
+}
+
+.ambient-two {
+  right: 7%;
+  bottom: 10%;
+  width: 260px;
+  height: 260px;
+  background: rgba(79, 140, 255, 0.18);
+}
+
+.shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+}
+
+.hero-card {
+  width: min(1120px, 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), #ffffff);
+  border: 1px solid var(--card-border);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+  padding: clamp(24px, 4vw, 40px);
+  backdrop-filter: blur(18px);
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.logo-mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent-2) 55%,
+    var(--accent-3) 100%
+  );
+  box-shadow: 0 12px 30px rgba(79, 140, 255, 0.24);
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  line-height: 1.02;
+}
+
+.hero-copy {
+  margin: 0 0 28px;
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.translator-card {
+  border-radius: var(--radius-xl);
+  background: rgba(248, 251, 255, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 22px;
+}
+
+.control {
+  display: grid;
+  gap: 10px;
+}
+
+.control span,
+.panel-top span,
+.panel-footer,
+.hint,
+#inputMeta,
+#statusText {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+select,
+textarea,
+.output-box {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: #ffffff;
+  color: var(--text);
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+select:focus,
+textarea:focus {
+  border-color: rgba(79, 140, 255, 0.75);
+  box-shadow: 0 0 0 4px rgba(79, 140, 255, 0.12);
+}
+
+select {
+  appearance: none;
+  padding: 15px 16px;
+  font: inherit;
+}
+
+.swap-button,
+.primary-button,
+.ghost-button {
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.swap-button:hover,
+.primary-button:hover,
+.ghost-button:hover {
+  transform: translateY(-1px);
+}
+
+.swap-button {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(79, 140, 255, 0.12),
+    rgba(98, 199, 180, 0.14)
+  );
+  color: var(--text);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.text-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.panel {
+  display: grid;
+  gap: 12px;
+}
+
+.panel-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+textarea {
+  min-height: 280px;
+  resize: vertical;
+  padding: 18px;
+  font: inherit;
+  line-height: 1.6;
+}
+
+.output-box {
+  min-height: 280px;
+  padding: 18px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  color: var(--text);
+}
+
+.panel-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 22px;
+}
+
+.action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.primary-button {
+  padding: 15px 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 16px 36px rgba(79, 140, 255, 0.24);
+}
+
+.ghost-button {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(79, 140, 255, 0.08);
+  color: var(--text);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.hint {
+  margin: 0;
+  text-align: right;
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+.loading {
+  opacity: 0.72;
+}
+
+.error {
+  color: #c24141;
+}
+
+.success {
+  color: var(--success);
+}
+
+.project-credit {
+  margin-top: 22px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 920px) {
+  .controls-grid,
+  .text-panels,
+  .action-row {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .swap-button {
+    justify-self: center;
+  }
+
+  .hint {
+    text-align: left;
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    padding: 16px;
+  }
+
+  .hero-card {
+    border-radius: 24px;
+    padding: 18px;
+  }
+
+  textarea,
+  .output-box {
+    min-height: 220px;
+  }
+}
